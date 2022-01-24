@@ -58,7 +58,7 @@ def bubbleSort_2(array: list):
 def bubbleSort_old(array: list):
     b_sorted = False
     n = 0
-    while b_sorted is False and n < 1000:
+    while not b_sorted and n < 1000:
         n += 1
 
         for index in range(len(array)):
@@ -78,14 +78,10 @@ def bubbleSort_old(array: list):
 
 if __name__ == "__main__":
     print("num1")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(bubbleSort(copy.copy(test)))
     print("num2")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(bubbleSort_2(copy.copy(test)))

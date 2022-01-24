@@ -18,9 +18,7 @@ Write a function that returns a bool based on if the string is a palindrome.
 """
 # O(n2) time, O(1)? space
 def isPalindromeSlow(string):
-    if string == string[::-1]:
-        return True
-    return False
+    return string == string[::-1]
 
 
 # O(n) time, O? space
@@ -40,10 +38,7 @@ def helper(string):
     if len(string) == 1:
         return True
     elif len(string) == 2:
-        if string[0] == string[1]:
-            return True
-        else:
-            return False
+        return string[0] == string[1]
     elif string[0] == string[-1]:
         return helper(string[1:-1])
     return False

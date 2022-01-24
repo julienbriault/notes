@@ -1,8 +1,6 @@
 def strings_concatenate_1():
     """Concatenate strings"""
-    s1 = "string 1"
-    s2 = "string 2"
-    s1 = s1 + s2
+    s1 = "string 1" + "string 2"
 
 def strings_concatenate_2():
     """Concatenate strings"""
@@ -13,10 +11,7 @@ def strings_concatenate_2():
 
 def strings_concatenate_3():
     """Concatenate strings"""
-    s1 = "string 1"
-    s2 = "string 2"
-    s3 = f"{s1}{s2}"
-    return s3
+    return f'string 1string 2'
 
 if __name__ == '__main__':
     import timeit

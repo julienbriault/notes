@@ -60,10 +60,7 @@ def isValidSubsequence(array, sequence):
         elif i == sequence[target]:
             # print(f"{i} == {sequence[target]}")
             target += 1
-    if target == len(sequence):
-        return True
-    else:
-        return False
+    return target == len(sequence)
 
 
 if __name__ == "__main__":

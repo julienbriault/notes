@@ -58,10 +58,8 @@ inputs = [
 
 def mergeOverlappingIntervals(intervals):
     intervals_sorted = sorted(intervals, key=lambda x: x[0])
-    merged_intervals = []
     currentInterval = intervals_sorted[0]
-    merged_intervals.append(currentInterval)
-
+    merged_intervals = [currentInterval]
     for nextInterval in intervals_sorted:
         _, currentIntervalEnd = currentInterval
         nextIntervalStart, nextIntervalEnd = nextInterval

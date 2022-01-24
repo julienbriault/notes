@@ -34,7 +34,7 @@ print(strange_stack)
 class Stack:
     def __init__(self, *, container=None):
         if container is None:
-            container = list()
+            container = []
         self._list = container
 
     def push(self, item):

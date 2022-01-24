@@ -51,7 +51,7 @@ if __name__ == "__main__":
         print(now.data)
         now = now.next
 
-    print(f"Remove duplicates, list before:")
+    print('Remove duplicates, list before:')
     print("\t", llist)
     currentNode = llist.head
     while currentNode is not None:

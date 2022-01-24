@@ -113,9 +113,7 @@ class DoublyLinkedList:
 
             node = node.next
         nodes_front_to_back.append("None")
-        ret = " <-> ".join(nodes_front_to_back)
-
-        return ret
+        return " <-> ".join(nodes_front_to_back)
 
 
 if __name__ == "__main__":

@@ -16,9 +16,7 @@ def io_bound_function(parameter):
 
 def example_process_pool():
     ppe = ProcessPoolExecutor(max_workers=5)
-    futures = []
-    for i in range(1, 11):
-        futures.append(ppe.submit(io_bound_function, i))
+    futures = [ppe.submit(io_bound_function, i) for i in range(1, 11)]
     print([future.result() for future in futures])
     return futures
 

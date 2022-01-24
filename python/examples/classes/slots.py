@@ -38,7 +38,7 @@ print(getsizeof(jan.__dict__))
 print(getsizeof(jan_slots))
 
 total = [Human(**instance_of_jan) for x in range(1000)]
-total_slots = [HumanSlots(**instance_of_jan) for x in range(1000)]
+total_slots = [HumanSlots(**instance_of_jan) for _ in range(1000)]
 
 print(getsizeof(total))
 print(getsizeof(total_slots))

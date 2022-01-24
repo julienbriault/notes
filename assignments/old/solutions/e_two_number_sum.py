@@ -45,20 +45,14 @@ def twoNumberSum_third(array, targetSum):
 
 if __name__ == "__main__":
     print("num1")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(twoNumberSum(test[0], test[1]))
     print("num2")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(twoNumberSum_second(test[0], test[1]))
     print("num3")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(twoNumberSum_third(test[0], test[1]))

@@ -20,26 +20,22 @@ def caesarCipherEncryptor(string: str, key: int):
 
 def caesarCipherEncryptor2(string: str, key: int):
     new_string = []
-    key = key % 26
+    key %= 26
     for c in string:
         nlc = ord(c) + key
-        if nlc <= 122:
-            new_char = chr(nlc)
-            new_string.append(new_char)
-        else:
+        if nlc > 122:
             print("nlc", nlc)
             nlc = nlc + 96 - 122
 
-            new_char = chr(nlc)
-            new_string.append(new_char)
-
+        new_char = chr(nlc)
+        new_string.append(new_char)
     return "".join(new_string)
 
 
 def caesarCipherEncryptor3(string: str, key: int):
     byPc = {n + 1: x for n, x in enumerate("abcdefghijklmnopqrstuvwxyz")}
     byCh = {x: n + 1 for n, x in enumerate("abcdefghijklmnopqrstuvwxyz")}
-    key = key % 26
+    key %= 26
 
     ret = []
     for c in string:
@@ -54,21 +50,15 @@ def caesarCipherEncryptor3(string: str, key: int):
 
 if __name__ == "__main__":
     print("num1")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(caesarCipherEncryptor(test[0], test[1]))
     print("num2")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(caesarCipherEncryptor2(test[0], test[1]))
     print("num3")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(caesarCipherEncryptor3(test[0], test[1]))
     # testing(tests[0])

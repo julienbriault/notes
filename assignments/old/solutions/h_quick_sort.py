@@ -43,8 +43,9 @@ def quickSortHelper(array, startIdx, endIdx):
         if array[rightIdx] >= array[pivotIdx]:
             rightIdx -= 1
     swap(pivotIdx, rightIdx, array)
-    leftSubarrayIsSmaller = rightIdx - 1 - startIdx < endIdx - (rightIdx + 1)
-    if leftSubarrayIsSmaller:
+    if leftSubarrayIsSmaller := rightIdx - 1 - startIdx < endIdx - (
+        rightIdx + 1
+    ):
         quickSortHelper(array, startIdx, rightIdx - 1)
         quickSortHelper(array, rightIdx + 1, endIdx)
     else:
@@ -61,26 +62,24 @@ def qsort(array):
     https://stackoverflow.com/questions/18262306/quicksort-with-python
     """
 
+    if len(array) <= 1:
+        return array
+    pivot = array[0]
     less = []
     equal = []
     greater = []
 
-    if len(array) > 1:
-        pivot = array[0]
-        for x in array:
-            if x < pivot:
-                less.append(x)
-            elif x == pivot:
-                equal.append(x)
-            elif x > pivot:
-                greater.append(x)
-        # Don't forget to return something!
-        return (
-            qsort(less) + equal + qsort(greater)
-        )  # Just use the + operator to join lists
-    # Note that you want equal ^^^^^ not pivot
-    else:  # You need to handle the part at the end of the recursion - when you only have one element in your array, just return the array.
-        return array
+    for x in array:
+        if x < pivot:
+            less.append(x)
+        elif x == pivot:
+            equal.append(x)
+        elif x > pivot:
+            greater.append(x)
+    # Don't forget to return something!
+    return (
+        qsort(less) + equal + qsort(greater)
+    )  # Just use the + operator to join lists
 
 
 if __name__ == "__main__":

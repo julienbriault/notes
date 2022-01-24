@@ -12,7 +12,7 @@ async def count():
 
 
 async def main():
-    tasks = [count() for x in range(100)]
+    tasks = [count() for _ in range(100)]
     await asyncio.gather(*tasks)
 
 

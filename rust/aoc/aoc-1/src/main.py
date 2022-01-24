@@ -23,11 +23,9 @@ def aoc_2():
     previous_window = 0
     window_size = 3
     lines_length = len(lines)
-    i = 0
-    while i < lines_length:
+    for i in range(lines_length):
         curr_lines = lines[i : i + window_size]
         curr_lines = [int(x) for x in curr_lines]
-        i += 1
         curr_window = sum(curr_lines)
         if curr_window > previous_window and previous_window != 0:
             count += 1

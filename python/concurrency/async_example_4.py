@@ -17,14 +17,10 @@ if (
 
 
 async def get_dev_info(session, dev):
-    async with session.get(
-        f"url",
-        headers={
-            "Authorization": "Bearer supersecret",
-            "Content-Type": "application/json",
-        },
-        json={"title": "Try Bearer"},
-    ) as resp:
+    async with session.get('url', headers={
+                "Authorization": "Bearer supersecret",
+                "Content-Type": "application/json",
+            }, json={"title": "Try Bearer"}) as resp:
 
         response = resp.json()
         print(response["dev_info"]["hostname"])

@@ -7,7 +7,7 @@ def count(count_to: int) -> int:
     start = time.time()
     counter = 0
     while counter < count_to:
-        counter = counter + 1
+        counter += 1
     end = time.time()
     print(f"Finished couting to {count_to} in {end - start}.")
     return counter

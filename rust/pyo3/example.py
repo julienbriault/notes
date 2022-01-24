@@ -47,7 +47,7 @@ except TypeError as e:
 # Calculating fibonacci
 from fib import get_fibonacci
 
-print(f"Fibonacci number in Python and in Rust:")
+print('Fibonacci number in Python and in Rust:')
 for i in range(10):
     res_python = get_fibonacci(i)
     res_rust = rust.get_fibonacci(i)
@@ -56,12 +56,12 @@ for i in range(10):
 from timeit import default_timer as timer
 
 py_start = timer()
-for i in range(999):
+for _ in range(999):
     get_fibonacci(150)
 py_res = get_fibonacci(150)
 py_elapsed = round(timer() - py_start, 3)
 ru_start = timer()
-for i in range(999):
+for _ in range(999):
     rust.get_fibonacci(150)
 ru_res = rust.get_fibonacci(150)
 ru_elapsed = round(timer() - ru_start, 3)
@@ -75,7 +75,6 @@ x.extend_vector([1, 1, 1, 1])
 x.printer()
 
 
-# sending over a Pydantic basemodel:
 class Human(BaseModel):
     name: str
     age: int

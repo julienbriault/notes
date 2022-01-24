@@ -21,12 +21,12 @@ def example_threadpool():
     futures = []
     with ThreadPoolExecutor(max_workers=3) as executor:
         argument_dictionary = [ {'parameter_1' : 1, 'parameter_2' : 2}, {'parameter_1' : 3, 'parameter_2' : 4} ]
-        for argument in argument_dictionary:
+        for _ in argument_dictionary:
             futures.append(
                 executor.submit(
                     io_bound_function, arguments.items()
                 )
-            )     
+            )
     print("Done threading the io_bound_function")
     return futures
 

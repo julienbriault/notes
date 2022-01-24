@@ -69,8 +69,7 @@ for i in to_iterate():
 
 
 def gen_reader(file_name):
-    for row in open(file_name, "r"):
-        yield row
+    yield from open(file_name, "r")
 
 
 for row in gen_reader("flatten_list.py"):

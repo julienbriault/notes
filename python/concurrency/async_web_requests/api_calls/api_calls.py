@@ -31,7 +31,7 @@ async def main(sites: List[str]):
     con = aiohttp.TCPConnector(ssl=False)
     # open async context manager
     async with aiohttp.ClientSession(connector=con) as session:
-        print(f"\n\n\nUSING ensure_future:\n" + (30 * "=") + "\n\n\n")
+        print('\n\n\nUSING ensure_future:\n' + 30 * "=" + "\n\n\n")
         # start adding tasks using ensure future:
         tasks = []
         for url in sites:
@@ -40,7 +40,7 @@ async def main(sites: List[str]):
 
         # run all tasks:
         await asyncio.gather(*tasks, return_exceptions=True)
-        print(f"\n\n\nUSING create_task:\n" + (30 * "=") + "\n\n\n")
+        print('\n\n\nUSING create_task:\n' + 30 * "=" + "\n\n\n")
         # alternatively, create tasks using create_task:
         alt_tasks = [asyncio.create_task(api_call(session, url)) for url in sites]
         # run all tasks:

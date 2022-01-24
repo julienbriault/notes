@@ -13,6 +13,7 @@ The built-in 'bytes' and bytearray':
 
 """
 
+
 # creating an empty byte:
 empty_bytes = bytes()
 print(empty_bytes)
@@ -35,7 +36,7 @@ ba.extend([1, 2, 3, 4, 5, 6, 7])
 # accessing byte values:
 print(ba)
 print(ba[0])
-print(ba[0:5])
+print(ba[:5])
 print(ba[-7:])
 
 # converting from bytes to text and vice-versa:

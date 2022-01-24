@@ -1,14 +1,10 @@
 from io import StringIO
-STRING_1 = str([ x for x in range(10000)])
-STRING_2 = str([ x for x in range(10000)])
+STRING_1 = str(list(range(10000)))
+STRING_2 = str(list(range(10000)))
 LIST_OF_STRINGS = [STRING_1, STRING_2]
 def test_1():
     """Using +="""
-    ret = ""
-
-    for string in LIST_OF_STRINGS:
-        ret += string
-    return ret
+    return "".join(LIST_OF_STRINGS)
 
 def test_2():
     return "".join(LIST_OF_STRINGS)

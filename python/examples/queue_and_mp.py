@@ -12,7 +12,7 @@ def safe_print(lock, *args):
 
 def gather_info(lock, queue):
     """gathers information and puts the information on the Queue"""
-    for x in range(0, 10):
+    for x in range(10):
         info = f"{x + 1}"
 
         safe_print(lock, "Obtained information:", info)

@@ -82,15 +82,11 @@ def tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest):
 def tandemBicycle_slow(redShirtSpeeds, blueShirtSpeeds, fastest):
     # Write your code here.
     redShirtSpeeds.sort()
-    total_sum = 0
     if fastest:
         blueShirtSpeeds.sort(reverse=True)
     else:
         blueShirtSpeeds.sort()
-    for i, j in zip(blueShirtSpeeds, redShirtSpeeds):
-        total_sum += max(i, j)
-
-    return total_sum
+    return sum(max(i, j) for i, j in zip(blueShirtSpeeds, redShirtSpeeds))
 
 
 if __name__ == "__main__":

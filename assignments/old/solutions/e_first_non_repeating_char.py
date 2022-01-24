@@ -9,23 +9,14 @@ def nonRepeating(s):
         return -1
     seen = {}
     for i, c in enumerate(s):
-        if c in seen:
-            seen[c] = len(s) + 1
-        else:
-            seen[c] = i
-
+        seen[c] = len(s) + 1 if c in seen else i
     lowest = min(seen.values())
 
-    if lowest > len(s):
-        return -1
-    else:
-        return lowest
+    return -1 if lowest > len(s) else lowest
 
 
 if __name__ == "__main__":
     print("num1")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(nonRepeating(test))

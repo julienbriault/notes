@@ -5,10 +5,7 @@ tests = ["abcdcba", "", "ba", "abcdefghihgfedcba", "abcdefghhgfedcba"]
 
 def isPalindrome(string):
     reverse = string[::-1]
-    if reverse == string:
-        return True
-    else:
-        return False
+    return reverse == string
 
 
 def isPalindrome_rec(string):
@@ -40,20 +37,14 @@ def isPalindrome_rec_sec(string, i=0):
 
 if __name__ == "__main__":
     print("num1")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(isPalindrome(test))
     print("num2")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(isPalindrome_rec(test))
     print("num2")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(isPalindrome_rec_sec(test))
