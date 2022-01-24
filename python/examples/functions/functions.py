@@ -107,12 +107,11 @@ def some_func(a: str) -> str:
     """
     import sys
 
-    b = a + "b"
     print(inspect.currentframe())
     f_locals: dict = inspect.currentframe().f_locals  # type: ignore
     print(f"function locals {f_locals}")
     print(f"syg.getframe: {sys._getframe()}")
-    return b
+    return a + "b"
 
 
 sig = inspect.signature(some_func)

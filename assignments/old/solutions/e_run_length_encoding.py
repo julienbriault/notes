@@ -9,20 +9,19 @@ def runLengthEncoding2(string):
     s = ""
     cur = []
     for c in string:
-        if len(cur) == 0:
+        if not cur:
             cur.append(c)
         elif c in cur and len(cur) < 9:
             cur.append(c)
 
-        elif c in cur and len(cur) >= 9:
+        elif c in cur:
             s = s + str(len(cur)) + c
             cur = [c]
 
-        elif c not in cur:
+        else:
             s = s + str(len(cur)) + cur[0]
             cur = [c]
-    else:
-        s = s + str(len(cur)) + cur[0]
+    s = s + str(len(cur)) + cur[0]
     return s
 
 
@@ -49,8 +48,6 @@ def runLengthEncoding(string):
 
 if __name__ == "__main__":
     print("num1")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(runLengthEncoding(test))

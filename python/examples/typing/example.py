@@ -31,5 +31,4 @@ class Branata:
 
 # 'cheating' with object
 def user_of_branata(x: str) -> object:
-    b = Branata(x)
-    return b
+    return Branata(x)

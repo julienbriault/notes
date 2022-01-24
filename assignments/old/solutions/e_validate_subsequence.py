@@ -9,9 +9,7 @@ def isValidSubsequence(array, sequence):
         if i in sequence:
             alt_sequence.append(i)
 
-    result = alt_sequence == sequence
-
-    return result
+    return alt_sequence == sequence
 
 
 

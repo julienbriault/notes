@@ -29,15 +29,11 @@ def sortedSquaredArray2(array):
 
 if __name__ == "__main__":
     print("num1")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(sortedSquaredArray(test))
 
     print("num2")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(sortedSquaredArray2(test))

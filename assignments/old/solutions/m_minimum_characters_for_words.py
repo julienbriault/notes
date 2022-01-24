@@ -18,12 +18,12 @@ def minimumCharactersForWords(words):
                 word_d[c] = 1
 
         for k, v in word_d.items():
-            if k in total_char_d:
-                if v > total_char_d[k]:
-                    total_char_d[k] = v
-            else:
+            if (
+                k in total_char_d
+                and v > total_char_d[k]
+                or k not in total_char_d
+            ):
                 total_char_d[k] = v
-
     answer = []
     for k, v in total_char_d.items():
         extension = [k] * v
@@ -34,8 +34,6 @@ def minimumCharactersForWords(words):
 
 if __name__ == "__main__":
     print("num1")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(minimumCharactersForWords(test))

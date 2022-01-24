@@ -48,9 +48,8 @@ def helper(smaller_start, longer_start):
     for idx, value in enumerate(smaller_start):
         if value < longer_start[idx]:
             continue
-        else:
-            print(False)
-            return False
+        print(False)
+        return False
     print(True)
     return True
 
@@ -67,13 +66,13 @@ def classPhotos(redShirtHeights, blueShirtHeights):
         redShirtHeight = redShirtHeights[idx]
         blueShirtHeight = blueShirtHeights[idx]
 
-        if shirt_color_in_first_row == "RED":
-            if redShirtHeight > blueShirtHeight:
-                return False
-        else:
-            if blueShirtHeight > redShirtHeight:
-                return False
-
+        if (
+            shirt_color_in_first_row == "RED"
+            and redShirtHeight > blueShirtHeight
+            or shirt_color_in_first_row != "RED"
+            and blueShirtHeight > redShirtHeight
+        ):
+            return False
     return True
 
 

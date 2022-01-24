@@ -7,7 +7,7 @@ from jinja2 import Environment, FileSystemLoader
 
 def load_communities() -> Communities:
     """Mocking data retrieval from 'something'."""
-    communities = Communities(
+    return Communities(
         **yaml.safe_load(
             """
     std_communities:
@@ -17,8 +17,6 @@ def load_communities() -> Communities:
     """
         )
     )
-
-    return communities
 
 
 def load_secrets_from_vault() -> Dict[str, str]:
@@ -32,7 +30,7 @@ def load_secrets_from_vault() -> Dict[str, str]:
 
 def load_information_from_ssot() -> Network:
     """Retreives information from SSOT"""
-    network = Network(
+    return Network(
         **yaml.safe_load(
             """
 devices:
@@ -65,7 +63,6 @@ devices:
 """
         )
     )
-    return network
 
 
 class NetworkBuilder:
@@ -109,9 +106,7 @@ class NetworkBuilder:
                 env = Environment(loader=file_loader)
 
                 template = env.get_template("template.j2")
-                output = template.render(data=data)
-
-                if output:
+                if output := template.render(data=data):
                     # avoid the Jinja whitespace nonesense:
                     output = "\n".join(
                         [line for line in output.splitlines() if line.strip()]

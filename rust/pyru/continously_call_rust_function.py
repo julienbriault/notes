@@ -12,9 +12,8 @@ library_name = "target/release/libpyru.so"
 pyru = ctypes.CDLL(library_name)
 
 if __name__ == "__main__":
-    i = 0
     loops = 1000000000000000
-    while i < loops:
+    for i in range(loops):
         marie = Person(name="Marie", age=2)
         marie_json_str = marie.json(indent=2).encode("utf-8")
         rust_return_marie = pyru.python_to_rust(marie_json_str)
@@ -35,5 +34,3 @@ if __name__ == "__main__":
             None,
             None,
         )
-
-        i += 1

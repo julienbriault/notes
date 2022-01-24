@@ -11,8 +11,8 @@ print("small list mem size:", getsizeof(alist))
 print("small array mem size:",getsizeof(array))
 del array
 del alist
-array = numpy.array([x for x in range(100000)])
-alist = [x for x in range(100000)]
+array = numpy.array(list(range(100000)))
+alist = list(range(100000))
 print("large list mem size:",getsizeof(alist))
 print("large array mem size:",getsizeof(array))
 

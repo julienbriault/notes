@@ -9,7 +9,7 @@ def minimumWaitingTime(queries):
     x = 0
     z = 0
     for i in queries[:-1]:
-        z = z + i
+        z += i
         x += z
     return x
 
@@ -28,23 +28,15 @@ def minimumWaitingTime_second(queries):
 def minimumWaitingTime_third(queries):
     queries.sort()
 
-    wait = 0
-    for i, q in enumerate(queries):
-        wait += q * (len(queries) - (i + 1))
-
-    return wait
+    return sum(q * (len(queries) - (i + 1)) for i, q in enumerate(queries))
 
 
 if __name__ == "__main__":
     print("num1")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(minimumWaitingTime(test))
     print("num2")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(minimumWaitingTime_second(test))

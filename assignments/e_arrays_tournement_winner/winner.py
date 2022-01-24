@@ -127,16 +127,12 @@ def tournamentWinner(competitions, results):
 
         if results[idx] == 1:
             score_dict[c[0]] += 1
-            if score_dict[c[0]] > winner[1]:
-                winner[0], winner[1] = c[0], score_dict[c[0]]
-            elif score_dict[c[1]] > winner[1]:
-                winner[0], winner[1] = c[1], score_dict[c[1]]
         else:
             score_dict[c[1]] += 1
-            if score_dict[c[0]] > winner[1]:
-                winner[0], winner[1] = c[0], score_dict[c[0]]
-            elif score_dict[c[1]] > winner[1]:
-                winner[0], winner[1] = c[1], score_dict[c[1]]
+        if score_dict[c[0]] > winner[1]:
+            winner[0], winner[1] = c[0], score_dict[c[0]]
+        elif score_dict[c[1]] > winner[1]:
+            winner[0], winner[1] = c[1], score_dict[c[1]]
     print("final score", score_dict)
 
     return winner[0]

@@ -13,11 +13,7 @@ def tournamentWinner(competitions, results):
     winners_d = {}
 
     for index, value in enumerate(results):
-        if value == 1:
-            winner = competitions[index][0]
-        else:
-            winner = competitions[index][1]
-
+        winner = competitions[index][0] if value == 1 else competitions[index][1]
         if winner in winners_d:
             winners_d[winner] += 1
         else:
@@ -63,15 +59,11 @@ def updateScores(team, points, scores):
 
 if __name__ == "__main__":
     print("num1")
-    i = 0
-    for d in tests:
-        i += 1
+    for i, d in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(tournamentWinner(competitions=d["competitions"], results=d["results"]))
     print("num2")
-    i = 0
-    for d in tests:
-        i += 1
+    for i, d in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(
             tournamentWinner_better(

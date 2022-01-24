@@ -3,7 +3,7 @@ def add(a: int, b: int):
 
 
 # simple listcomp:
-x = [x for x in range(1, 101)]
+x = list(range(1, 101))
 
 # calling a function in the listcomp:
 x = [add(x, 10) for x in range(1, 101)]

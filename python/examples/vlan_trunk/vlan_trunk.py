@@ -3,7 +3,7 @@ from itertools import groupby
 
 
 def vlan_range_string(vland_ids: List[int]) -> str:
-    range_strings = list()
+    range_strings = []
 
     for _, num_gen in groupby(enumerate(vland_ids), key=lambda x: x[0] - x[1]):
         num_list = [item[1] for item in num_gen]

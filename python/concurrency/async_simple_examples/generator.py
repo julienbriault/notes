@@ -1,8 +1,5 @@
 def gen():
-    counter = 0
-    while counter < 10:
-        yield counter
-        counter += 1
+    yield from range(10)
 
 
 g = gen()

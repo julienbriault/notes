@@ -10,16 +10,12 @@ def threeNumberSum(array, targetSum):
     for v1 in array:
         for v2 in array:
             for v3 in array:
-                if v1 == v2:
+                if v1 == v2 or v2 == v3 or v1 == v3:
                     continue
-                elif v2 == v3:
-                    continue
-                elif v1 == v3:
-                    continue
-                elif (v1 + v2 + v3) == targetSum:
+                elif v1 + v2 + v3 == targetSum:
                     addition = [v1, v2, v3]
                     addition.sort()
-                    if not addition in ret:
+                    if addition not in ret:
                         ret.append(addition)
     ret.sort()
     return ret
@@ -27,8 +23,6 @@ def threeNumberSum(array, targetSum):
 
 if __name__ == "__main__":
     print("num1")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(threeNumberSum(test[0], test[1]))

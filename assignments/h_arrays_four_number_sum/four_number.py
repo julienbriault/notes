@@ -20,9 +20,8 @@ def fourNumberSum(array, targetSum):
     print(targetSum)
     result = []
     for i in array:
-        possibility = []
         target = targetSum
-        possibility.append(i)
+        possibility = [i]
         for j in array or sum(possibility) == target:
             if j == i:
                 pass
@@ -32,7 +31,7 @@ def fourNumberSum(array, targetSum):
             if sum(possibility) == target:
                 print("edding", sum(possibility))
                 result.append(possibility)
-    if len(result) > 0:
+    if result:
         print("sum", sum(result[0]))
     return result
 

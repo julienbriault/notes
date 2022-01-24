@@ -12,22 +12,15 @@ def smallestDifference(arrayOne, arrayTwo):
             diff = abs(valueO - valueT)
             curr = [indexO, indexT, diff]
             # print(curr)
-            if len(results) > 0:
-                if diff < results[2]:
-                    results = curr
-            else:
+            if results and diff < results[2] or len(results) <= 0:
                 results = curr
-
     first = results[0]
     second = results[1]
-    ret_list = [arrayOne[first], arrayTwo[second]]
-    return ret_list
+    return [arrayOne[first], arrayTwo[second]]
 
 
 if __name__ == "__main__":
     print("num1")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(smallestDifference(test[0], test[1]))

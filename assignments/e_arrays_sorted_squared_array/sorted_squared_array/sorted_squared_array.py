@@ -12,10 +12,8 @@ inputs = [
 # O(nlogn) time (we iterate the array and in the end, we also sort it)
 # O(n) space: we need to create a new array
 def sortedSquaredArray(array):
-    new_array = []
+    new_array = [i ** 2 for i in array]
 
-    for i in array:
-        new_array.append(i ** 2)
     new_array.sort()
     return new_array
 

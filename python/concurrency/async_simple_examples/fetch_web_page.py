@@ -22,7 +22,7 @@ async def main():
         # print some information:
         print(f"{len(exceptions)} failed and {len(successes)} completed")
         for page in successes:
-            print(page[0:100])
+            print(page[:100])
 
 
 if __name__ == "__main__":

@@ -65,28 +65,20 @@ def py_bisect_right(array, target):
 
 if __name__ == "__main__":
     print("\nbinsearch\n")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(binarySearch(test[0], test[1]))
     print("\nlinear\n")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(linear(test[0], test[1]))
     print("\nbisect left\n")
 
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(py_bisect_left(test[0], test[1]))
     print("\nbisect right\n")
 
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(py_bisect_right(test[0], test[1]))

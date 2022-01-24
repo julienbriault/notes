@@ -62,17 +62,16 @@ def reverse_list(a_list):
 def reverseWordsInString_slow(string):
     # print(string)
 
-    string_in_reverse = " ".join([x for x in reversed(string.split())])
+    string_in_reverse = " ".join(list(reversed(string.split())))
     spaces = []
     to_add = ""
     for i in string:
         # print(f"-{i}-")
         if i == " ":
             to_add += " "
-        else:
-            if len(to_add) > 0:
-                spaces.append(to_add)
-                to_add = ""
+        elif to_add != '':
+            spaces.append(to_add)
+            to_add = ""
     if to_add:
         spaces.append(to_add)
     # print(f"to_add: {to_add}-")
@@ -81,31 +80,27 @@ def reverseWordsInString_slow(string):
     for i in string:
         if i != " ":
             word += i
-        else:
-            if len(word) > 0:
-                words.append(word)
-                word = ""
-    else:
-        words.append(word)
+        elif word != '':
+            words.append(word)
+            word = ""
+    words.append(word)
 
     # print("spaces", spaces)
     # print("words", words)
     counter = len(words) - 1
     new_string = []
-    if len(spaces) > 0:
-        if string[-1] == " ":
-            new_string.append(spaces.pop())
+    if spaces and string[-1] == " ":
+        new_string.append(spaces.pop())
     while counter >= 0:
 
         word_to_add: str = words[counter]
         new_string.append(word_to_add)
         # print(new_string)
-        if len(spaces) > 0:
+        if spaces:
             new_string.append(spaces.pop())
         counter -= 1
-    new_str = "".join(new_string)
     # print(f"new_str: {new_str}-")
-    return new_str
+    return "".join(new_string)
 
 
 if __name__ == "__main__":

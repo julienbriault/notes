@@ -5,10 +5,7 @@ class Typed:
         self.key = name
 
     def __get__(self, instance, cls):
-        if instance:
-            return instance.__dict__[self.key]
-        else:
-            return self
+        return instance.__dict__[self.key] if instance else self
 
     def __set__(self, instance, value):
         if not isinstance(value, self.expected_type):

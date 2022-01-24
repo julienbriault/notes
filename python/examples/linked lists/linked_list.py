@@ -82,12 +82,9 @@ class LinkedList:
     def get_index(self, index):
         if not self.head:
             raise Exception("List is empty")
-        i = 0
-        for node in self:
+        for i, node in enumerate(self):
             if i == index:
                 return node.data
-            i += 1
-
         raise Exception("Index not in linked list")
 
     # challenge: make the linked list indexable through the use of brackets

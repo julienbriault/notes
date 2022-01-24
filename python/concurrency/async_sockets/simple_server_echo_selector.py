@@ -16,7 +16,7 @@ selector.register(server_socket, selectors.EVENT_READ)
 while True:
     events: List[Tuple[SelectorKey, int]] = selector.select(timeout=1)
 
-    if len(events) == 0:
+    if not events:
         print("no events")
 
     for event, _ in events:

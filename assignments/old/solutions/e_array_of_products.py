@@ -10,9 +10,7 @@ def arrayOfProducts(array: list):
     for i in range(len(array)):
         currentProduct = 1
         for j in range(len(array)):
-            if i == j:
-                pass
-            else:
+            if i != j:
                 currentProduct *= array[j]
                 newArray[i] = currentProduct
 
@@ -21,9 +19,7 @@ def arrayOfProducts(array: list):
 
 if __name__ == "__main__":
     print("num1")
-    i = 0
-    for test in tests:
-        i += 1
+    for i, test in enumerate(tests, start=1):
         print(f"Test number {i}")
         print(arrayOfProducts(test))
     # testing(tests[0])
